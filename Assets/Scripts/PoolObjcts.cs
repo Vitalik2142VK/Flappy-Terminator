@@ -34,14 +34,16 @@ public class PoolObjcts<T> where T : MonoBehaviour
         _pool.Push(obj);
     }
 
-    public void DeactiveAll()
+    public void RemoveAll()
     {
         for (int i = 0; i < _conteiner.childCount; i++)
         {
             if (_conteiner.GetChild(i).gameObject.TryGetComponent(out T obj)) 
             {
-                PutGameObject(obj);
+                Object.Destroy(obj.gameObject);
             }  
         }
+
+        _pool.Clear();
     }
 }

@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private PoolEnemy _poolEnemy;
     [SerializeField] private PoolShell _poolShellEnemy;
     [SerializeField, Min(0.3f)] private float _maxDelay;
-    [SerializeField, Min(0.3f)] private float _minDelay;
+    [SerializeField, Min(0.1f)] private float _minDelay;
     [SerializeField] private float _maxHeight;
     [SerializeField] private float _minHeight;
 
@@ -37,10 +37,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void ReturnAll()
+    public void RemoveAll()
     {
-        _poolEnemy.DeactiveAll();
-        _poolShellEnemy.DeactiveAll();
+        _poolEnemy.RemoveAll();
+        _poolShellEnemy.RemoveAll();
     }
 
     private void SpawnEnemy()

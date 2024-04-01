@@ -26,8 +26,8 @@ public class PoolEnemy : MonoBehaviour
         enemy.Dead -= PutEnemy;
     }
 
-    public void DeactiveAll()
+    public void RemoveAll()
     {
-        _pool.DeactiveAll();
+        _pool.RemoveAll();
     }
 }

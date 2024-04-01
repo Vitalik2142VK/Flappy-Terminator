@@ -10,9 +10,9 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _minRotationZ;
 
     private Vector3 _stratPosition;
-    private Rigidbody2D _rigidbody;
     private Quaternion _maxRotation;
     private Quaternion _minRotation;
+    private Rigidbody2D _rigidbody;
 
     public bool IsActiveMove => _rigidbody.simulated;
 

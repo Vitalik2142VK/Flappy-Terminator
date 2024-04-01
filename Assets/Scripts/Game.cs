@@ -29,9 +29,9 @@ public class Game : MonoBehaviour
 
     private void OverGame()
     {
-        _startGame.Open();
-        _enemySpawner.ReturnAll();
-        _enemySpawner.gameObject.SetActive(false);
         _ground.Stop();
+        _startGame.Open();
+        _enemySpawner.RemoveAll();
+        _enemySpawner.gameObject.SetActive(false);
     }
 }
