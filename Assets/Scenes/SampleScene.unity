@@ -913,7 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolEnemy: {fileID: 1620129354}
   _poolShellEnemy: {fileID: 1113486425}
-  _maxDelay: 1.5
+  _maxDelay: 0.5
   _minDelay: 0.3
   _maxHeight: 4.5
   _minHeight: -3.5

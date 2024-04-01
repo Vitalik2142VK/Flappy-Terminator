@@ -9,17 +9,6 @@ public class StartButton : MonoBehaviour
 
     public event Action GameStrat;
 
-    //private void OnEnable()
-    //{
-    //    _actionButton.onClick.AddListener(OnButtonClick);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _actionButton.onClick.RemoveListener(OnButtonClick);
-
-    //}
-
     public void Open()
     {
         _menu.alpha = 1.0f;

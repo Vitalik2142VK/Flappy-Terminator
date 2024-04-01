@@ -14,14 +14,12 @@ public class Player : Character, IPlayer
     private PlayerMover _playerMover;
     private PlayerShoting _playerShoting;
     private Animator _animator;
-    private Vector2 _startPosition;
 
     private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
         _playerShoting = GetComponent<PlayerShoting>();
         _animator = GetComponent<Animator>();
-        _startPosition = transform.position;
 
         GetComponents();
     }
@@ -37,7 +35,7 @@ public class Player : Character, IPlayer
         {
             _playerMover.Move();
 
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F) || Input.GetMouseButton(0))
                 _playerShoting.Shot(transform.rotation.eulerAngles.z);
         }
     }
@@ -45,8 +43,8 @@ public class Player : Character, IPlayer
     public void Activation()
     {
         gameObject.SetActive(true);
-        transform.position = _startPosition;
 
+        _playerMover.Reset();
         _playerMover.StartMove();
     }
 
@@ -56,7 +54,7 @@ public class Player : Character, IPlayer
         {
             _animator.SetTrigger(Destroyed);
             _playerMover.DeactiveMove();
-            _playerShoting.RemoveAllShell();
+            _playerShoting.RemoveAll();
 
             StartCoroutine(WaitRemove());
         }

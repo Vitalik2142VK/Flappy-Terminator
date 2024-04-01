@@ -30,14 +30,15 @@ public class PlayerShoting : MonoBehaviour
             shell.gameObject.SetActive(true);
             shell.transform.position = _shotPoint.transform.position;
             shell.transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+            shell.Rigidbody.velocity = Vector3.zero;
             shell.Rigidbody.AddForce(_speedShell * targetPoint);
 
             _timer.UpdateWaitingTime();
         }
     }
 
-    public void RemoveAllShell()
+    public void RemoveAll()
     {
-        _pool.DeactiveAll();
+        _pool.RemoveAll();
     }
 }

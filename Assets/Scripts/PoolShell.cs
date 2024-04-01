@@ -26,8 +26,8 @@ public class PoolShell : MonoBehaviour
         shell.Hit -= PutShell;
     }
 
-    public void DeactiveAll()
+    public void RemoveAll()
     {
-        _pool.DeactiveAll();
+        _pool.RemoveAll();
     }
 }
